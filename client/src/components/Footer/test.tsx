@@ -1,13 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import Footer from '.'
 
 describe('<Footer />', () => {
   it('should render 4 columns topcis', () => {
-    render(<Footer />)
+    renderWithTheme(<Footer />)
 
-    expect(
-      screen.getByRole('heading', { name: /Contact/i })
-    ).toBeInTheDocument()
+    expect(screen.getByText(/Contact/i)).toBeInTheDocument()
   })
 })

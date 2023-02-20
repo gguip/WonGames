@@ -27,4 +27,23 @@ describe('<Banner />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+
+  it('should render a Ribbon', () => {
+    renderWithTheme(
+      <Banner
+        ribbon="My Ribbon"
+        ribbonSize="small"
+        ribbonColor="secondary"
+        {...props}
+      />
+    )
+    const ribbon = screen.getByTestId('Ribbon-component')
+
+    expect(ribbon).toBeInTheDocument()
+    expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' })
+    expect(ribbon).toHaveStyle({
+      height: '2.6rem',
+      fontSize: '1.2rem'
+    })
+  })
 })

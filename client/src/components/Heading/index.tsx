@@ -25,6 +25,7 @@ const Heading = ({
     lineBottom={lineBottom}
     lineColor={lineColor}
     size={size}
+    data-testid="Heading component"
   >
     {children}
   </S.Wrapper>
